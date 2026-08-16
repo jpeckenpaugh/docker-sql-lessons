@@ -1,9 +1,9 @@
 services:
   monitor:
-    build: ./monitor
+    build: ./01-monitor
     container_name: system-monitor
     volumes:
-      - ./monitor:/app        # bind mount: edit code, no rebuild needed
+      - ./01-monitor:/app     # bind mount: edit code, no rebuild needed
       - stats:/data           # named volume: the stats database persists here
     environment:
       - STAT_FREQ=10          # seconds between samples

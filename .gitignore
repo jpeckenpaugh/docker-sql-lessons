@@ -1,4 +1,36 @@
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.so
+.ipynb_checkpoints/
+
+# Virtual environments (docker-only lessons: no local venvs)
+.venv/
+venv/
+env/
+ENV/
+
+# Databases
 *.db
-monitor/monitoring.db
+*.sqlite*
+monitoring.db
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Build / tooling artifacts
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Python packages / build output
+dist/
+build/
+*.egg-info/
+
+# OS / editor cruft
+.DS_Store
+.idea/
+.vscode/

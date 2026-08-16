@@ -1,0 +1,15 @@
+services:
+  api:
+    build: .
+    container_name: lessons-api
+    ports:
+      - "8000:8000"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./app:/app/app        # bind mount: edit code, no rebuild needed
+      - sqlite_data:/data     # named volume: the SQLite database persists here
+    environment:
+      - DATABASE_URL=sqlite:////data/lessons.db
+
+volumes:
+  sqlite_data:
